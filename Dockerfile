@@ -1,4 +1,4 @@
-FROM maven:3.8.2-jdk-17-slim AS stage1
+FROM maven:3.8.5-jdk-17-slim AS stage1
 WORKDIR /home/app
 COPY . /home/app/
 RUN mvn package -DskipTests
