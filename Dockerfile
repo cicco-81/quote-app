@@ -1,10 +1,10 @@
-FROM maven:3.8.2-jdk-8-slim AS stage1
+FROM maven:3.8.2-jdk-17-slim AS stage1
 WORKDIR /home/app
 COPY . /home/app/
 RUN mvn package -DskipTests
 
 # Create an Image
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17-jdk-alpine
 EXPOSE 5000
 
 # Copia l'artefatto compilato dalla fase di costruzione
