@@ -6,8 +6,6 @@ RUN mvn package -DskipTests
 
 # Create an Image
 FROM openjdk:17-jdk-alpine
-EXPOSE 5000
-
 # Copia l'artefatto compilato dalla fase di costruzione
 COPY --from=stage1 /home/app/target/random-quote-app-0.0.1-SNAPSHOT.jar app.jar
 
